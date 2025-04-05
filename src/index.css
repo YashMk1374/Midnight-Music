@@ -1,0 +1,130 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 252 100% 67%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 240 5% 10%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 5% 25%;
+    --muted-foreground: 240 5% 65%;
+    
+    --accent: 252 100% 67%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 252 100% 67%;
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 252 100% 67%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 240 5% 10%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 5% 25%;
+    --muted-foreground: 240 5% 65%;
+    
+    --accent: 252 100% 67%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 252 100% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 0.5s ease;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-background/80 backdrop-blur border border-white/10 shadow-lg;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-in-out;
+  }
+  
+  .animate-slow-spin {
+    animation: slow-spin 12s linear infinite;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slow-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.sonner-toast {
+  cursor: pointer;
+}
+
+/* Dynamic theme transitions */
+:root {
+  transition: --primary 0.5s ease, 
+              --secondary 0.5s ease, 
+              --background 0.5s ease;
+}
+
+/* Fix for mobile player */
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
